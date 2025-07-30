@@ -1,0 +1,150 @@
+::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7BA96B, #AFC1A6 60%, #F7D02C 100%);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px 1px rgba(43, 217, 255, 0.18), inset 0 0 6px var(--electric-zap);
+  transition: 0.3s;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
+
+@keyframes insideCard {
+  0% {
+    background-position: 150% 150%;
+  }
+
+  100% {
+    background-position: -50% -50%;
+  }
+}
+
+@keyframes replayPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 2px var(--electric-base);
+  }
+
+  50% {
+    box-shadow:
+      0 0 10px var(--electric-zap),
+      0 0 20px var(--electric-glow);
+  }
+}
+
+:root {
+  --vt-c-white: #f7f7f7;
+  --vt-c-white-mute: #e7eae0;
+  --vt-c-black: rgba(39, 39, 42, 0.85);
+  --vt-c-black-mute: #1f1f1f;
+
+  --vt-c-green-light: #7BA96B;
+  --vt-c-green-dark: #1f6853;
+  --vt-c-pika-yellow: #f7cf2b;
+
+  --mobile-menu-dark: rgba(53, 53, 58, 0.55);
+  --mobile-menu-light: rgba(227, 227, 227, 0.3);
+
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(249, 250, 251, 0.8);
+
+  --main-gradient-size: 200% 100%;
+  --main-background-animation: gradientMove 6s infinite;
+  --card-border-gradient: linear-gradient(135deg, #e2e2e2, #bdbdbd 25%, #ffffff 50%, #bdbdbd 75%, #e2e2e2);
+  --card-inside-gradient: linear-gradient(135deg, transparent, #bdbdbd1e 35%, #eeeeee6f 50%, #bdbdbd1e 65%, transparent);
+
+  --electric-zap: #00f7ff;
+  --electric-fade: #aef9ff;
+}
+
+
+:root[data-theme='light'] {
+  --color-background: var(--vt-c-white-mute);
+  --background-block: var(--vt-c-white);
+  --single-card: var(--vt-c-green-light);
+  --color-border: rgba(147, 147, 161, 0.65);
+  --color-heading: rgb(39, 39, 42);
+  --color-text: var(--vt-c-black);
+  --color-nav-a: var(--vt-c-black);
+  --multicolor-gradient: linear-gradient(120deg,
+      #E9C46A 15%,
+      var(--electric-base) 35%,
+      #42B983 55%,
+      #7D5FFF 75%,
+      var(--vt-c-pika-yellow) 95%);
+  --input-border: rgba(147, 147, 161, 0.25);
+  --electric-base: #3eb8ae;
+  --electric-glow: #00c6ff;
+  --electric-pop: #009eff;
+  --electric-white: #ffffff;
+  --map-controls: var(--map-controls-light);
+  --mobile-menu: var(--mobile-menu-light);
+  --popup: var(--vt-c-green-light);
+}
+
+:root[data-theme='dark'] {
+  --color-background: var(--vt-c-black-mute);
+  --background-block: var(--vt-c-black);
+  --single-card: var(--vt-c-green-dark);
+  --color-border: rgba(147, 147, 161, 0.25);
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
+  --color-nav-a: var(--vt-c-white-mute);
+  --multicolor-gradient: linear-gradient(120deg,
+      #7D5FFF 15%,
+      var(--electric-zap) 35%,
+      #009EFF 55%,
+      #42B983 75%,
+      #FFE766 95%);
+  --input-border: var(--color-border);
+  --electric-base: #45d8cc;
+  --electric-glow: var(--electric-zap);
+  --electric-pop: #66e3ff;
+  --electric-white: #ffffff;
+  --map-controls: var(--map-controls-dark);
+  --mobile-menu: var(--mobile-menu-dark);
+  --popup: var(--vt-c-green-dark);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: 0.5s;
+  line-height: 1.6;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
