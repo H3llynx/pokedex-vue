@@ -1,6 +1,7 @@
 <script setup>
 const emit = defineEmits(['clicked'])
 
+// Para poder usar el icono como boton en Safari (navegación con el teclado):
 const handleKeyDown = (e) => {
   if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault()
@@ -8,6 +9,7 @@ const handleKeyDown = (e) => {
   }
 }
 </script>
+
 <template>
   <svg tabindex="0" role="button" aria-label="close" @keydown="handleKeyDown" xmlns="http://www.w3.org/2000/svg"
     height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">

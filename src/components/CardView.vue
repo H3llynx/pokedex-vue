@@ -4,6 +4,7 @@ import DefenseIcon from '../components/icons/DefenseIcon.vue';
 
 const props = defineProps(['poke'])
 
+// Para definir el color de fondo de la carta en función del/de los tipos del Pokémon:
 const backgroundColors = {
   normal: '#A8A77A',
   fire: '#EE8130',

@@ -11,7 +11,7 @@ const toggleForm = () => {
   visible.value = !visible.value
 }
 
-
+// Para borrar un Pokémon creado:
 const deletePoke = async () => {
   if (props.poke.id === 1 || props.poke.id === 2) {
     alert('Pit-Chou and Lynxie cannot be deleted; you can only edit them or change their location. Only Pokémon you’ve created yourself can be removed.')

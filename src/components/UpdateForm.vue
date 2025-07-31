@@ -18,12 +18,15 @@ const toggleForm = () => {
   visible.value = !visible.value
 }
 
+// Para actualizar cualquier de un Pokémon creado:
 const validateInputs = () => {
+  // No se hace nada si el usuario no ha entrado nuevos datos:
   if (!name.value && !attack.value && !defense.value && !latitude.value && !longitude.value && !image.value) {
     visible.value = false
     return
   }
   else {
+    // Se modifica solamente cuando hay datos nuevos, y en caso de las coordinadas se revalidan:
     if (!name.value) name.value = props.poke.name
     if (!attack.value) attack.value = props.poke.attack
     if (!defense.value) defense.value = props.poke.defense

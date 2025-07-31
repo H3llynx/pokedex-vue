@@ -1,10 +1,13 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue'
 
+// Recupera las preferencias del sistema:
 const getSystemPreference = () => {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
+// Recupera la preferencia del usuario (sistema si entra por primera vez, desde localStorage si
+// ya había escogido un tema en la app antes:)
 const storedTheme = localStorage.getItem('theme')
 const theme = ref(storedTheme || 'system')
 const onloadTheme = theme.value === 'system' ? getSystemPreference() : storedTheme
@@ -13,6 +16,7 @@ onMounted(() => {
   document.documentElement.setAttribute('data-theme', onloadTheme)
 })
 
+// Cambia el tema según la elección del usuario y guarda la elección en localStorage
 watch(theme, (pickedTheme) => {
   if (pickedTheme === 'system') {
     document.documentElement.setAttribute('data-theme', getSystemPreference())
@@ -24,12 +28,11 @@ watch(theme, (pickedTheme) => {
   }
 })
 
-// Una pregunta: al usar Safari, para temas de accesibilidad con teclado, suelo tener
-// que manualmente escribir funciones especificas en js para que, en vez de un
-// click, se pueda activar una functión con la tecla Enter. Aquí, veo que esta ya
-// optimizado para botones normales, pero en el caso de estos inputs no lo he logrado.
-// Puedo lograr el focus si añado manualmente role="button" tabindex="0" al label, pero
-// la tecla Enter no me permitirá cambiar el tema. Como puedo lograr este efecto en Vue?
+
+// PREGUNTA: al usar Safari, suelo tener que añadir tabindex, role="button", o/y
+// escribir funciones en js para poder forzar el focus y el trigger de la función con Enter.
+// Lo he podido lograr aquí para iconos, pero no lo he logrado con estos inputs.
+// Hay algún truco?
 
 </script>
 <template>

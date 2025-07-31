@@ -12,6 +12,7 @@ const map = ref(null)
 const pokes = ref([])
 const markers = ref([])
 
+// Vistas mapa y satelite:
 const mapLayers = {
   "Map": L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -22,6 +23,8 @@ const mapLayers = {
     attribution: 'Tiles © Esri'
   })
 }
+
+// Icono de marker (custom):
 const pokeIcon = L.icon({
   iconUrl: pokeMarker,
   iconSize: [24, 32],
@@ -29,6 +32,7 @@ const pokeIcon = L.icon({
   popupAnchor: [0, -30]
 });
 
+// Creación marker y popup:
 const createMarker = (poke) => {
   const { name, image, latitude, longitude, attack, defense } = poke
   const popupContent = `<div class="popup-img"><img src="${image}"></div><div><h3>${name}</h3><p>Attack: ${attack}</p><p>Defense: ${defense}</p></div>`
@@ -37,6 +41,7 @@ const createMarker = (poke) => {
   return marker;
 }
 
+// Para cargar (y refrescar) los markers en el mapa:
 const addToMap = async () => {
   const data = await getCustomPoke()
   pokes.value = data
@@ -61,10 +66,10 @@ const initMap = () => {
   L.control.layers(mapLayers, null, { collapsed: false }).addTo(map.value);
 };
 
+// Para abrir el popup haciendo click en la imagen del Pokémon:
 const open = (poke) => {
   poke.marker.openPopup()
 }
-
 
 onMounted(() => {
   initMap()

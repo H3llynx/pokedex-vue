@@ -10,6 +10,7 @@ const defense = ref('')
 
 const emit = defineEmits(['reload'])
 
+// Para confirmar que las coordinadas son válidas:
 const validateInputs = () => {
   const latInput = parseFloat(latitude.value)
   const longInput = parseFloat(longitude.value)
@@ -29,7 +30,9 @@ const validateInputs = () => {
   }
 }
 
+// Creación del Pokémon:
 const createPoke = async () => {
+  // Con imagen predefinida en caso de que el usuario no ponga url de imagen:
   let pokeImage
   if (!image.value) {
     pokeImage = 'https://i.imghippo.com/files/IJ9610JD.png'
@@ -57,6 +60,7 @@ const createPoke = async () => {
   }
 }
 
+// Como no funciona sin .prevent, para resetear el formulario después de cada envio:
 const resetForm = () => {
   latitude.value = ''
   longitude.value = ''

@@ -14,6 +14,8 @@ const toggleForm = () => {
   visible.value = !visible.value
 }
 
+// Para revalidar las nuevas coordinadas - en los campos en los que no se ha introducido valor
+// nuevo se mantendrán las coordinadas iniciales:
 const validateInputs = () => {
   if (!latitude.value && !longitude.value) {
     visible.value = false
@@ -40,10 +42,12 @@ const validateInputs = () => {
     resetForm()
   }
 }
+
 const resetForm = () => {
   latitude.value = ''
   longitude.value = ''
 }
+
 const movePoke = async () => {
   try {
     const response = await fetch(`https://retoolapi.dev/GHU2tQ/data/${props.poke.id}`, {

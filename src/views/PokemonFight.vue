@@ -26,6 +26,7 @@ const capitalize = (name) => {
   return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
+// Elección y display de los combatientes:
 const showSelected = (poke, attack, defense, speed) => {
   if (fighter1.value.name === '') {
     fighter1.value.name = capitalize(poke)
@@ -89,6 +90,7 @@ const Fight = (poke1, poke2) => {
   }
 }
 
+// Para impedir que se vean y se giren otras cartas:
 const battleArena = computed(() => {
   if (numberOfFighters.value < 2) return pokes.value
   else {
