@@ -87,7 +87,7 @@ const updatePoke = async () => {
 </script>
 
 <template>
-  <div class="wrapper"><button tabindex="0" role="button" class="card-btn" @click="toggleForm">Update me</button></div>
+  <div class="wrapper"><button tabindex="0" class="card-btn" @click="toggleForm">Update me</button></div>
   <teleport to="body">
     <div class="overlay" v-show="visible">
       <div class="form">
@@ -116,7 +116,7 @@ const updatePoke = async () => {
           <label for="image">Image URL</label>
           <input id="image" v-model="image" type="url"
             :placeholder="poke.image !== 'https://i.imghippo.com/files/IJ9610JD.png' ? props.poke.image : ''" />
-          <button tabindex="0" role="button">Submit</button>
+          <button tabindex="0">Submit</button>
         </form>
       </div>
     </div>

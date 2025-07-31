@@ -46,7 +46,7 @@ const deletePoke = async () => {
         <p> Are you sure you want to delete {{
           props.poke.name }}?</p>
         <div class="wrapper">
-          <button tabindex="0" role="button" @click="deletePoke()">Yes</button><button tabindex="0" role="button"
+          <button tabindex="0" @click="deletePoke()">Yes</button><button tabindex="0" role="button"
             @click="toggleForm">No</button>
         </div>
       </div>

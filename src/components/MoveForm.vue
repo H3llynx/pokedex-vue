@@ -70,7 +70,7 @@ const movePoke = async () => {
 </script>
 
 <template>
-  <button tabindex="0" role="button" class="card-btn" @click="toggleForm">Move me
+  <button tabindex="0" class="card-btn" @click="toggleForm">Move me
     <i>
       <MoveIcon />
     </i>
@@ -87,7 +87,7 @@ const movePoke = async () => {
           <input id="latitude" v-model="latitude" type="text" :placeholder="props.poke.latitude" />
           <label for="longitude">Enter new longitude</label>
           <input id="longitude" v-model="longitude" type="text" :placeholder="props.poke.longitude" />
-          <button tabindex="0" role="button">Submit</button>
+          <button tabindex="0">Submit</button>
         </form>
         <img src="../assets/images/backpack.png" class="backpack" />
       </div>

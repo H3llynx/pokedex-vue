@@ -11,12 +11,11 @@ import ThemeSelection from './components/ThemeSelection.vue';
       <img alt="Vue logo" class="logo" src="./assets/images/logo.png" />
     </div>
     <nav>
-      <RouterLink tabindex="0" role="button" to="/">Home <img src="./assets/images/top-nav.png" class="top-nav nav-1" />
+      <RouterLink tabindex="0" to="/">Home <img src="./assets/images/top-nav.png" class="top-nav nav-1" />
       </RouterLink>
-      <RouterLink tabindex="0" role="button" to="/fight">Fight <img src="./assets/images/top-nav-2.png"
-          class="top-nav nav-2" />
+      <RouterLink tabindex="0" to="/fight">Fight <img src="./assets/images/top-nav-2.png" class="top-nav nav-2" />
       </RouterLink>
-      <RouterLink tabindex="0" role="button" to="/create">Create your Pokemon <img src="./assets/images/top-nav-3.png"
+      <RouterLink tabindex="0" to="/create">Create your Pokemon <img src="./assets/images/top-nav-3.png"
           class="top-nav nav-3" /></RouterLink>
     </nav>
   </header>

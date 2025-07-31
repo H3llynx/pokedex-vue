@@ -101,7 +101,7 @@ const resetForm = () => {
       <label for="image">Image URL</label>
       <input id="image" v-model="image" type="url" placeholder="e.g. https://picsum.photos/id/237/200/300" />
     </div>
-    <button type="submit" role="button" tabindex="0">Create</button>
+    <button type="submit" tabindex="0">Create</button>
   </form>
 </template>
 
