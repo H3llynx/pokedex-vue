@@ -140,4 +140,4 @@ vite.config.ts.timestamp-*
 
 # autre
 .vite
-.DS-Store
+.DS_Store
