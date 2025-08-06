@@ -28,12 +28,6 @@ watch(theme, (pickedTheme) => {
   }
 })
 
-
-// PREGUNTA: al usar Safari, suelo tener que añadir tabindex, role="button", o/y
-// escribir funciones en js para poder forzar el focus y el trigger de la función con Enter.
-// Lo he podido lograr aquí para iconos, pero no lo he logrado con estos inputs.
-// Hay algún truco?
-
 </script>
 <template>
   <div class="theme">
